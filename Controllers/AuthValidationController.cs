@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace AgentValidationsFunctionSample.Controllers
+namespace InsuredValidationsFunctionSample.Controllers
 {
     [Route("api/auth-validation")]
     public class AuthValidationController : ControllerBase

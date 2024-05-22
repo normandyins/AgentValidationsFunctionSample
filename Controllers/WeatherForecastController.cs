@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace AgentValidationsFunctionSample.Controllers
+namespace InsuredValidationsFunctionSample.Controllers
 {
     [ApiController]
     [Route("[controller]")]

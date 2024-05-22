@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "AgentValidationsFunctionSample": {
+    "InsuredValidationsFunctionSample": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

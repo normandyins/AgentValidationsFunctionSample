@@ -1,4 +1,4 @@
-namespace AgentValidationsFunctionSample
+namespace InsuredValidationsFunctionSample
 {
     public class WeatherForecast
     {
