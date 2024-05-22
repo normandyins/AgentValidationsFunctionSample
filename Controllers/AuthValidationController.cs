@@ -22,6 +22,7 @@ namespace InsuredValidationsFunctionSample.Controllers
                 insuredValidationRequest = JsonConvert.DeserializeObject<InsuredValidationRequest>(modelString, jsonSettings);
             }
             //Checking the validations here.
+            //Dummy: Right now, if you put keyword "fail" in the surName field or the field is missing, it will throw the error.
             if (insuredValidationRequest != null && !string.IsNullOrEmpty( insuredValidationRequest.SurName) && !insuredValidationRequest.SurName.ToLower().Contains("fail"))
             {
                 return Ok();
@@ -35,6 +36,7 @@ namespace InsuredValidationsFunctionSample.Controllers
                     code = "API12345",
                     requestId = "50f0bd91-2ff4-4b8f-828f-00f170519ddb",
                     userMessage = "Message for the user",
+                    //Dummy: Concatinating the request payload, just for troubleshooting, so that we can see if all the fields are coming throug.
                     developerMessage = $"You are not authorized to sign up for an account. {modelString}",
                     moreInfo = "https://restapi/error/API12345/moreinfo"
                 };
