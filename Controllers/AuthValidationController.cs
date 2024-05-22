@@ -36,7 +36,7 @@ namespace InsuredValidationsFunctionSample.Controllers
                     code = "API12345",
                     requestId = "50f0bd91-2ff4-4b8f-828f-00f170519ddb",
                     userMessage = "Message for the user",
-                    //Dummy: Concatinating the request payload, just for troubleshooting, so that we can see if all the fields are coming throug.
+                    //Dummy: Concatinating the request payload, just for troubleshooting, so that we can see if all the fields are coming through.
                     developerMessage = $"You are not authorized to sign up for an account. {modelString}",
                     moreInfo = "https://restapi/error/API12345/moreinfo"
                 };
