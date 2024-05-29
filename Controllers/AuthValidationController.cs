@@ -66,7 +66,14 @@ namespace InsuredValidationsFunctionSample.Controllers
             var modelString = obj.ToString();
 
             var cert = this.HttpContext.Connection.GetClientCertificateAsync().Result;
-            
+
+            string headers = "";
+            foreach (var header in Request.Headers)
+            {
+                headers +=" | "+($"{header.Key}: {header.Value}");
+            }
+
+
             var insuredValidationResponse = new InsuredValidationResponse
             {
                 version = "1.0.0",
@@ -75,7 +82,7 @@ namespace InsuredValidationsFunctionSample.Controllers
                 requestId = "50f0bd91-2ff4-4b8f-828f-00f170519ddb",
                 userMessage = "Message for the user",
                 //Dummy: Concatinating the request payload, just for troubleshooting, so that we can see if all the fields are coming through.
-                developerMessage = cert != null ? "The Certificate is Present" + cert.FriendlyName : "The Certificate is not available.",
+                developerMessage = cert != null ? "The Certificate is Present" + cert.FriendlyName+ headers : "The Certificate is not available. "+ headers,
                 moreInfo = "https://restapi/error/API12345/moreinfo"
             };
             return Conflict(insuredValidationResponse);
